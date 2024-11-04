@@ -1,3 +1,6 @@
+import tkinter as tk
+
+
 ### ------------------------------------------------- ###
 ### SPACE INVADERS ###
 # UTF8
@@ -16,7 +19,15 @@ class blocAlien :
 # creation objet alien 
 class alien : 
     def __init__(self, position) : 
+        #création d'un widget canvas pour l'alien
+        largeur = 87
+        longueur = 87
+        Alien = tk.Canvas(self, width = largeur, height = longueur, bg ='red')
+        Canevas.pack()
+        vitesse = 10
+        deplacement()
         self.position = position 
+    def deplacement():
 
 # creation protection 
 class protection :
