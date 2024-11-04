@@ -6,8 +6,14 @@
 # Date de creation du fichier : Lundi 4 Nov 2024
 # Derniere mise a jour : Lundi 4 Nov 2024
 
+### - Librairies - ###
+import tkinter as tk
 
-### ------------------------------------------------- ###
+### - Images - ###
+photoVaisseau = tk.PhotoImage(file="./images/vaisseau.png")
+
+
+### - Gestion des classes - ###
 # creation objet bloc aliens 
 class blocAlien :
     def __init__(self, position, vitesse):
