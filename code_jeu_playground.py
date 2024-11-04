@@ -8,9 +8,12 @@
 
 ### - Librairies - ###
 import tkinter as tk
+from Affichage import SI
 
 ### - Images - ###
 photoVaisseau = tk.PhotoImage(file="./images/vaisseau.png")
+image_label = tk.Label(SI, image=photoVaisseau)
+image_label.pack()
 
 
 ### - Gestion des classes - ###
@@ -32,9 +35,22 @@ class protection :
 
 # creation objet vaisseau 
 class vaisseau :
-    def __init__(self, position, vies):
-        self.position = position
+    def __init__(self, positionX, positionY, vies):
+        self.positionX = positionX
+        self.positionY = positionY
         self.vies = vies 
+        self.canva = tk.Canvas(SI, width=160, height=187, bg='')
+        self.imageVaisseau = tk.create_image(0, 0, anchor="nw", file=photoVaisseau)
+        self.canva.coords(positionX, positionY, self.imageVaisseau)
+        self.tk.focus_set()
+
+    def deplacer(self):
+        touche=tk.event.keysym
+
+        if touche == "q" : 
+            self.positionX -= 40
+        if touche == "d" : 
+            self.positionX += 40
 
 # creation objet projectile 
 class projectile : 
